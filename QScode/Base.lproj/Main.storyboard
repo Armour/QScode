@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7531" systemVersion="14C1510" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7520"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,52 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wBN-CS-9hU">
+                                <rect key="frame" x="16" y="20" width="568" height="479"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                            </view>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="5td-cP-9AT">
+                                <rect key="frame" x="0.0" y="556" width="600" height="44"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="FvA-27-JTb"/>
+                                    <barButtonItem title="Start!" id="Hcj-7h-ku6">
+                                        <connections>
+                                            <action selector="startStopReading:" destination="vXZ-lx-hvc" id="Xzy-li-WZO"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="pzp-BS-p5F"/>
+                                </items>
+                            </toolbar>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gLw-C6-OF6">
+                                <rect key="frame" x="16" y="511" width="568" height="33"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="33" id="TRU-cY-gw8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gLw-C6-OF6" firstAttribute="leading" secondItem="wBN-CS-9hU" secondAttribute="leading" id="43r-ZS-zZY"/>
+                            <constraint firstItem="wBN-CS-9hU" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="AI9-HL-sxS"/>
+                            <constraint firstAttribute="trailing" secondItem="5td-cP-9AT" secondAttribute="trailing" id="CPg-4R-yKe"/>
+                            <constraint firstItem="5td-cP-9AT" firstAttribute="centerX" secondItem="gLw-C6-OF6" secondAttribute="centerX" id="Gkn-gz-V2h"/>
+                            <constraint firstItem="5td-cP-9AT" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leading" id="IuW-aV-UkX"/>
+                            <constraint firstItem="gLw-C6-OF6" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" id="JHe-9S-ZLR"/>
+                            <constraint firstItem="wBN-CS-9hU" firstAttribute="trailing" secondItem="gLw-C6-OF6" secondAttribute="trailing" id="M8B-Iw-VGg"/>
+                            <constraint firstItem="5td-cP-9AT" firstAttribute="bottom" secondItem="2fi-mo-0CV" secondAttribute="top" id="PnI-um-Kre"/>
+                            <constraint firstItem="gLw-C6-OF6" firstAttribute="top" secondItem="wBN-CS-9hU" secondAttribute="bottom" constant="12" id="QKP-8y-Jrh"/>
+                            <constraint firstItem="5td-cP-9AT" firstAttribute="top" secondItem="gLw-C6-OF6" secondAttribute="bottom" constant="12" id="y9f-V1-NgH"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="labelStatus" destination="gLw-C6-OF6" id="qBW-Yp-gUk"/>
+                        <outlet property="startButton" destination="Hcj-7h-ku6" id="Awa-fn-bb8"/>
+                        <outlet property="viewPreview" destination="wBN-CS-9hU" id="aRL-4K-ecx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>

@@ -10,6 +10,9 @@
 
 @interface ViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UIView *viewPreview;
+@property (weak, nonatomic) IBOutlet UILabel *labelStatus;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *startButton;
 
 @end
 
